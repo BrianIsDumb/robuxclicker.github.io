@@ -3,13 +3,13 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Example: Basic Clicker Game (Javascript)</title>
+    <title>Robux Clicker</title>
     <style>
-    body {
-  background-image: url("https://i.redd.it/pnlmtyzraecz.png%22);
+      body {
+  background-image: url("https://i.redd.it/pnlmtyzraecz.png");
   background-color: black;
   font-family: "Comic Sans MS";
-
+  
 }
 
 div {
@@ -43,6 +43,171 @@ b {
   color: white;
 }
     </style>
+    <script>
+      var actualClicks = 1; // This variable will be used to track the actual number of clicks
+var totalPoints = 0; // This variable will be used to track the points earned based on the click rate
+var clickRate = 1; // The value of clickRate will be added to the numClicks
+var clicksToUpgrade = 10; // Upgrades will be available every 10 clicks
+var html; // Reusable variable for building html to display
+var showUpgrade = true;
+var showUpgrade1 = true;
+var showUpgrade2 = true;
+var showUpgrade3 = true;
+var showUpgrade4 = true;
+var showUpgrade5 = true;
+var showUpgrade6 = true;
+var showUpgrade7 = true;
+
+// Function that runs every time the image is clicked
+function clicked() {
+
+  // Update click variables
+  actualClicks += 1;
+  totalPoints = totalPoints + clickRate;
+
+  // Display total points (aka: number of Spartans)
+  html = "<br>You have <b>" + totalPoints + "</b> Robux.";
+  document.getElementById("clicks").innerHTML = html;
+
+  // Display the current click rate
+  html = "<br>Robux Rate <b>" + clickRate + "</b>.";
+  document.getElementById("clickRate1").innerHTML = html;
+
+  // Check to see if an upgrade should be offered - p.s. The % is called the "modulus operator"!!
+  if (totalPoints > 5 && showUpgrade) {
+    html = "<br><button id=upgradeButton onClick='upgradeClickRate1()'>Click here for Guest Upgrade!</button>";
+    document.getElementById("upgrade1").innerHTML = html;
+    showUpgrade = false;
+  }
+
+  if (totalPoints > 100 && showUpgrade1) {
+    html = "<br><button id=upgradeButton onClick='upgradeClickRate2()'>Click here for Noob Upgrade!</button>";
+    document.getElementById("upgrade2").innerHTML = html;
+    showUpgrade1 = false;
+
+  }
+
+  if (totalPoints > 500 && showUpgrade2) {
+    html = "<br><button id=upgradeButton onClick='upgradeClickRate3()'>Click here for Builders Club Classic Upgrade!</button>";
+    document.getElementById("upgrade3").innerHTML = html;
+    showUpgrade2 = false;
+
+  }
+
+  if (totalPoints > 1100 && showUpgrade3) {
+    html = "<br><button id=upgradeButton onClick='upgradeClickRate4()'>Click here for Builders Club Turbo Upgrade!</button>";
+    document.getElementById("upgrade4").innerHTML = html;
+    showUpgrade3 = false;
+  }
+
+  if (totalPoints > 19000 && showUpgrade4) {
+    html = "<br><button id=upgradeButton onClick='upgradeClickRate5()'>Click here for Builders Club Outragous Upgrade!</button>";
+    document.getElementById("upgrade5").innerHTML = html;
+    showUpgrade4 = false;
+  }
+
+  if (totalPoints > 1000000 && showUpgrade5) {
+    html = "<br><button id=upgradeButton onClick='upgradeClickRate6()'>Click here for Boss Upgrade!</button>";
+    document.getElementById("upgrade6").innerHTML = html;
+    showUpgrade5 = false;
+  }
+
+  if (totalPoints > 1000000000 && showUpgrade6) {
+    html = "<br><button id=upgradeButton onClick='upgradeClickRate7()'>Click here for Ultimate Chad Upgrade!</button>";
+    document.getElementById("upgrade7").innerHTML = html;
+    showUpgrade6 = false;
+  }
+
+  if (totalPoints > 1000000000000000 && showUpgrade7) {
+    html = "<br><button id=upgradeButton onClick='upgradeClickRate8()'>Click here for Roblox Significant Other Upgrade!</button>";
+    document.getElementById("upgrade8").innerHTML = html;
+    showUpgrade7 = false;
+  }
+}
+// Function for updating the click rate when the upgrade button is clicked
+function upgradeClickRate1() {
+
+  // Reset the HTML so that the upgrade button is NOT visible
+  document.getElementById("upgrade1").innerHTML = "";
+
+  // Update the click rate
+  clickRate += 1;
+
+  // Display the new click rate
+  html = "<br>Your click rate is <b>" + clickRate + "</b>";
+  document.getElementById("clickRate1").innerHTML = html;
+}
+// Function for updating the click rate when the upgrade button is clicked
+function upgradeClickRate2() {
+
+  // Reset the HTML so that the upgrade button is NOT visible
+  document.getElementById("upgrade2").innerHTML = "";
+
+  // Update the click rate
+  clickRate += 5;
+
+}
+
+function upgradeClickRate3() {
+
+  // Reset the HTML so that the upgrade button is NOT visible
+  document.getElementById("upgrade3").innerHTML = "";
+
+  // Update the click rate
+  clickRate += 15;
+
+}
+
+function upgradeClickRate4() {
+
+  // Reset the HTML so that the upgrade button is NOT visible
+  document.getElementById("upgrade4").innerHTML = "";
+
+  // Update the click rate
+  clickRate += 35;
+
+}
+
+function upgradeClickRate5() {
+
+  // Reset the HTML so that the upgrade button is NOT visible
+  document.getElementById("upgrade5").innerHTML = "";
+
+  // Update the click rate
+  clickRate += 60;
+
+}
+
+function upgradeClickRate6() {
+
+  // Reset the HTML so that the upgrade button is NOT visible
+  document.getElementById("upgrade6").innerHTML = "";
+
+  // Update the click rate
+  clickRate += 500;
+
+}
+
+function upgradeClickRate7() {
+
+  // Reset the HTML so that the upgrade button is NOT visible
+  document.getElementById("upgrade7").innerHTML = "";
+
+  // Update the click rate
+  clickRate += 1000;
+
+}
+
+function upgradeClickRate8() {
+
+  // Reset the HTML so that the upgrade button is NOT visible
+  document.getElementById("upgrade8").innerHTML = "";
+
+  // Update the click rate
+  clickRate += 1000000000000000000000000000000;
+
+}
+    </script>
   </head>
 
   <body>
